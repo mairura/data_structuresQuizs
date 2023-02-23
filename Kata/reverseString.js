@@ -5,3 +5,9 @@ function reverseWords(str) {
   let soln = reservedString.split(" ").reverse().join(" ");
   return soln;
 }
+//Can also be simplified to this
+function reverseWords(str) {
+  // Go for it
+  //split words into seperate arrays
+  return str.split("").reverse().join("").split(" ").reverse().join(" ");
+}
