@@ -40,3 +40,16 @@ function disemvowel(str) {
 function disemvowel(str) {
   return (str || "").replace(/[aeiou]/gi, "");
 }
+
+//EAsier way can be as follows
+let sentence = "This is a sample sentence";
+let vowels = ["a", "e", "i", "o", "u"];
+let result = "";
+
+for (let i = 0; i < sentence.length; i++) {
+  if (vowels.indexOf(sentence[i].toLowerCase()) === -1) {
+    result += sentence[i];
+  }
+}
+
+console.log(result); // Output: Ths s  smpl sntnc
