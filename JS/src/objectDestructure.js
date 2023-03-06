@@ -22,12 +22,25 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+
+  orderDelivery: function ({ starterIndex, mainIndex, address, time }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
 };
 
-const { name, openingHours, categories } = restaurant;
-// console.log(name, openingHours, categories);
-//Changing name
+restaurant.orderDelivery({
+  time: "22:30",
+  address: "Via del Sole, 21",
+  mainIndex: 2,
+  starterIndex: 2,
+});
 
+const { name, openingHours, categories } = restaurant;
+console.log("First Print:", name, openingHours, categories);
+
+//Changing name - you call the property with new variable name
 const {
   name: restaurantName,
   openingHours: Hours,
@@ -50,5 +63,5 @@ console.log(a, b);
 //Nested objects
 const {
   fri: { open, close },
-} = openingHours;
+} = restaurant.openingHours;
 console.log(open, close);
