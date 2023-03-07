@@ -45,12 +45,6 @@ console.log(players1, players2);
 
 // 2. First player in the array is gk. Creat varibale for GK(gk) with goalkeepers name
 // and one array to contain the rest of the players (fieldPlayers)
-// const gk = game.players[0][0];
-// console.log("Print BM GK:", gk);
-// const fieldPlayers = game.players[0];
-// const bmFieldPlayers = [...fieldPlayers];
-// console.log("Print BM fieldPlayers:", bmFieldPlayers);
-
 const [gk, ...fieldPlayers] = players1;
 console.log(gk, fieldPlayers);
 
@@ -63,9 +57,15 @@ const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
 console.log(players1Final);
 
 // 5. Create variable for game.odds
-const team1 = game.odds.team1;
-console.log("Odds for team1:", team1);
-const draw = game.odds.x;
-console.log("Odds for draw:", draw);
-const team2 = game.odds.team2;
-console.log("Odds for team2:", team2);
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+console.log(team1, draw, team2);
+
+// 6.
+const printGoals = function (...players) {
+  console.log(`${players.length} goals were scored`);
+};
+printGoals("Davies", "Muller", "Lewandowski", "Kimmich");
+printGoals("Davies", "Muller");
+print(...game.scored);
