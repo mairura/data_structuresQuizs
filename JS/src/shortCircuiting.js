@@ -39,3 +39,5 @@ const guest2 = restaurant.numGuests || 10;
 console.log("Guest2:", guest2);
 
 console.log("-------- AND --------");
+//Works opposite of OR operator
+console.log(0 && "Jonas");
